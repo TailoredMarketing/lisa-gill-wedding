@@ -5,7 +5,7 @@
 				while( have_posts() ) : 
 					the_post();
 			?>
-        	<div class="col-md-24 single_header match">
+        	<div class="col-md-24 single_header">
             	<?php 
 					if ( has_post_thumbnail() ) {
 						echo '<div class="has_thumb">';
@@ -17,16 +17,17 @@
 					}
 				?>
             </div>
-            <div class="col-md-17">
+            <div class="col-md-16">
             	<article>
                 	<header>
                     	<?php tailored_post_meta(); ?>
                     </header>
 					<?php the_content(); ?>
+                    <?php comments_template(); ?>
                 </article>
             </div>
-            <div class="col-md-1 match divider"></div>
-            <div class="col-md-7 match">
+            
+            <div class="col-md-7 col-md-offset-1">
             	<?php get_sidebar(); ?>
             </div>
         	<?php endwhile; ?>

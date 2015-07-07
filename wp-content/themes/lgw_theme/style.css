@@ -267,6 +267,11 @@ body {
 	-webkit-box-shadow: none;
  	 box-shadow: none;
 }
+.panel {
+	border-radius: 0;
+	-webkit-box-shadow: none;
+ 	 box-shadow: none;
+}
 .panel-default>.panel-heading {
 	background: #e7e7e7;
 }
@@ -275,6 +280,9 @@ body {
 }
 .panel-group {
 	margin-bottom: 5px;
+}
+.single-post article header {
+	padding-bottom: 15px;	
 }
 #footer a {
 	color: #716f6f;
