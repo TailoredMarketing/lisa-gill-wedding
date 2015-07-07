@@ -196,6 +196,10 @@ body {
 .has_thumb {
 	position: relative;
 }
+.has_thumb img {
+	width: 100%;
+	height: auto;
+}
 #content .has_thumb h1 {
 	position: absolute;
 	bottom: 0;
