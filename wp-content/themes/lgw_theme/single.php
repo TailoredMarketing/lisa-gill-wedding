@@ -12,8 +12,16 @@
 							the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) ); 
 							echo '<h1>'.get_the_title().'</h1>';
 						echo '</div>';
-					}  
+					}  else {
+						echo '<h1>'.get_the_title().'</h1>';	
+					}
 				?>
+            </div>
+            <div class="col-md-18">
+            	<?php the_content(); ?>
+            </div>
+            <div class="col-md-6">
+            	<?php get_sidebar(); ?>
             </div>
         	<?php endwhile; ?>
         </div>
