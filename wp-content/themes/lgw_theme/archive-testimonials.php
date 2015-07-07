@@ -24,6 +24,7 @@
                 <?php						
 					endwhile;
 				?>
+                <?php wp_pagenavi(); ?>
             </div>
         	
         </div>
