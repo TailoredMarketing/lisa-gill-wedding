@@ -138,9 +138,77 @@ class tailored_theme_class {
 			'menu_icon'			 => 'dashicons-cart',
 			'supports'           => array( 'title', 'editor', 'thumbnail' )
 		);
+		
+		$faqlabels = array(
+			'name'               => _x( 'FAQs', 'post type general name', 'your-plugin-textdomain' ),
+			'singular_name'      => _x( 'FAQ', 'post type singular name', 'your-plugin-textdomain' ),
+			'menu_name'          => _x( 'FAQs', 'admin menu', 'your-plugin-textdomain' ),
+			'name_admin_bar'     => _x( 'FAQs', 'add new on admin bar', 'your-plugin-textdomain' ),
+			'add_new'            => _x( 'Add New FAQ', 'book', 'your-plugin-textdomain' ),
+			'add_new_item'       => __( 'Add New FAQ', 'your-plugin-textdomain' ),
+			'new_item'           => __( 'New FAQ', 'your-plugin-textdomain' ),
+			'edit_item'          => __( 'Edit FAQ', 'your-plugin-textdomain' ),
+			'view_item'          => __( 'View FAQ', 'your-plugin-textdomain' ),
+			'all_items'          => __( 'All FAQs', 'your-plugin-textdomain' ),
+			'search_items'       => __( 'Search FAQs', 'your-plugin-textdomain' ),
+			'parent_item_colon'  => __( 'Parent FAQs:', 'your-plugin-textdomain' ),
+			'not_found'          => __( 'No FAQs found.', 'your-plugin-textdomain' ),
+			'not_found_in_trash' => __( 'No FAQs found in Trash.', 'your-plugin-textdomain' )
+		);
+	
+		$faqargs = array(
+			'labels'             => $faqlabels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => false,
+			'capability_type'    => 'post',
+			'has_archive'        => false,
+			'hierarchical'       => false,
+			'exclude_from_search'=> false,
+			'menu_icon'			 => 'dashicons-lightbulb',
+			'supports'           => array( 'title', 'editor' )
+		);
+		
+		$testlabels = array(
+			'name'               => _x( 'Testimonials', 'post type general name', 'your-plugin-textdomain' ),
+			'singular_name'      => _x( 'Testimonial', 'post type singular name', 'your-plugin-textdomain' ),
+			'menu_name'          => _x( 'Testimonials', 'admin menu', 'your-plugin-textdomain' ),
+			'name_admin_bar'     => _x( 'Testimonials', 'add new on admin bar', 'your-plugin-textdomain' ),
+			'add_new'            => _x( 'Add New', 'book', 'your-plugin-textdomain' ),
+			'add_new_item'       => __( 'Add New Testimonial', 'your-plugin-textdomain' ),
+			'new_item'           => __( 'New Testimonial', 'your-plugin-textdomain' ),
+			'edit_item'          => __( 'Edit Testimonial', 'your-plugin-textdomain' ),
+			'view_item'          => __( 'View Testimonial', 'your-plugin-textdomain' ),
+			'all_items'          => __( 'All Testimonials', 'your-plugin-textdomain' ),
+			'search_items'       => __( 'Search Testimonials', 'your-plugin-textdomain' ),
+			'parent_item_colon'  => __( 'Parent Testimonials:', 'your-plugin-textdomain' ),
+			'not_found'          => __( 'No testimonials found.', 'your-plugin-textdomain' ),
+			'not_found_in_trash' => __( 'No testimonials found in Trash.', 'your-plugin-textdomain' )
+		);
+	
+		$testargs = array(
+			'labels'             => $testlabels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => true,
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'exclude_from_search'=> false,
+			'menu_icon'			 => 'dashicons-megaphone',
+			'supports'           => array( 'title', 'editor', 'thumbnail' )
+		);
 	
 		register_post_type( 'gallaries', $galleryargs );
 		register_post_type( 'packages', $packageargs );
+		register_post_type( 'faqs', $faqargs );
+		register_post_type( 'testimonials', $testargs );
 	}
 	
 	public function packages_meta_box() {
