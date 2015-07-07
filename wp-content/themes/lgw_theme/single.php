@@ -17,7 +17,7 @@
 					}
 				?>
             </div>
-            <div class="col-md-14">
+            <div class="col-md-17">
             	<article>
                 	<header>
                     	<?php tailored_post_meta(); ?>
@@ -26,7 +26,7 @@
                 </article>
             </div>
             <div class="col-md-1 match divider"></div>
-            <div class="col-md-8 match">
+            <div class="col-md-7 match">
             	<?php get_sidebar(); ?>
             </div>
         	<?php endwhile; ?>
