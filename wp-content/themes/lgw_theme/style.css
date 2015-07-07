@@ -196,7 +196,7 @@ body {
 .has_thumb {
 	position: relative;
 }
-.has_thumb h1 {
+#content .has_thumb h1 {
 	position: absolute;
 	bottom: 0;
 	left: 0;
