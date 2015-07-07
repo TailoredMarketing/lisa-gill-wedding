@@ -25,7 +25,7 @@
 					<?php the_content(); ?>
                 </article>
             </div>
-            <div class="col-md-1 col-md-offset-1 match"></div>
+            <div class="col-md-1 col-md-offset-1 match divider"></div>
             <div class="col-md-8 match">
             	<?php get_sidebar(); ?>
             </div>

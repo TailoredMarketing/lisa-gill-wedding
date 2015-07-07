@@ -206,6 +206,9 @@ body {
 .single_header {
 	margin-bottom: 30px;
 }
+.divider {
+	margin-right: 1px solid #e6e6e6;
+}
 .packages a:hover .package_image {
 	background: #bfb8a9;
 	border-color: #bfb8a9;
