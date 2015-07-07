@@ -27,7 +27,7 @@
         if( $category = get_the_category() ) {
             echo '<div class="post_meta">';
             if($category[0]){
-                echo '<a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a> | ';
+                echo ' Posted in <a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a> on ';
             }
             the_time( get_option( 'date_format' ) );
             echo '</div>';
