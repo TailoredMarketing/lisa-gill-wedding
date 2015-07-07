@@ -203,6 +203,9 @@ body {
 	background: rgba( 0,0,0,0.7 );
 	color: #fff;	
 }
+.single_header {
+	margin-bottom: 30px;
+}
 .packages a:hover .package_image {
 	background: #bfb8a9;
 	border-color: #bfb8a9;
