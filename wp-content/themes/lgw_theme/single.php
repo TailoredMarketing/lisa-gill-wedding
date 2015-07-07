@@ -5,7 +5,7 @@
 				while( have_posts() ) : 
 					the_post();
 			?>
-        	<div class="col-md-24">
+        	<div class="col-md-24 single_header">
             	<?php 
 					if ( has_post_thumbnail() ) {
 						echo '<div class="has_thumb">';
