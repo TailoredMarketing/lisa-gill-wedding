@@ -20,7 +20,7 @@
             <div class="col-md-18">
             	<article>
                 	<header>
-                    	tailored_post_meta();
+                    	<?php tailored_post_meta(); ?>
                     </header>
 					<?php the_content(); ?>
                 </article>
