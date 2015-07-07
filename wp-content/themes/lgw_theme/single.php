@@ -18,7 +18,12 @@
 				?>
             </div>
             <div class="col-md-18">
-            	<?php the_content(); ?>
+            	<article>
+                	<header>
+                    	tailored_post_meta();
+                    </header>
+					<?php the_content(); ?>
+                </article>
             </div>
             <div class="col-md-6">
             	<?php get_sidebar(); ?>
