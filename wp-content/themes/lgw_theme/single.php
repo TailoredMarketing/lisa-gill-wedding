@@ -17,7 +17,7 @@
 					}
 				?>
             </div>
-            <div class="col-md-18">
+            <div class="col-md-14">
             	<article>
                 	<header>
                     	<?php tailored_post_meta(); ?>
@@ -25,7 +25,8 @@
 					<?php the_content(); ?>
                 </article>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-1 col-md-offset-1"></div>
+            <div class="col-md-8">
             	<?php get_sidebar(); ?>
             </div>
         	<?php endwhile; ?>
