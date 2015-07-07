@@ -5,7 +5,7 @@
 				while( have_posts() ) : 
 					the_post();
 			?>
-        	<div class="col-md-24 single_header">
+        	<div class="col-md-24 single_header match">
             	<?php 
 					if ( has_post_thumbnail() ) {
 						echo '<div class="has_thumb">';
@@ -25,8 +25,8 @@
 					<?php the_content(); ?>
                 </article>
             </div>
-            <div class="col-md-1 col-md-offset-1"></div>
-            <div class="col-md-8">
+            <div class="col-md-1 col-md-offset-1 match"></div>
+            <div class="col-md-8 match">
             	<?php get_sidebar(); ?>
             </div>
         	<?php endwhile; ?>
