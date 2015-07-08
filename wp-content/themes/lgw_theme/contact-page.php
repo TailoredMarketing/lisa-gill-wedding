@@ -15,7 +15,7 @@ Template Name: Contact Page
 				?>
             </div>
         	<div class="col-md-7 col-md-offset-1 ">
-            
+            	<?php dynamic_sidebar( 'contact_sidebar' ); ?>
             </div>
         </div>
     </div>

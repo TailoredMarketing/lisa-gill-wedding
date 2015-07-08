@@ -65,6 +65,15 @@ class tailored_theme_class {
 			'before_title' => '<div class="panel-heading"><h3 class="panel-title">',
 			'after_title' => '</h3></div><div class="panel-body">',
 		) );
+		
+		register_sidebar( array(
+			'name' => __( 'Contact Sidebar', 'seowned' ),
+			'id' => 'contact_sidebar',
+			'before_widget' => '<div class="panel panel-default"><div class="panel-body">',
+			'after_widget' => "</div></div>",
+			'before_title' => '<h3>',
+			'after_title' => '</h3>',
+		) );
         
 	}
     
