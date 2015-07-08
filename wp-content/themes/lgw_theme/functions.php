@@ -88,6 +88,7 @@ class tailored_theme_class {
     
     public function register_widgets (){
 		register_widget( 'social_widget' );
+		register_widget( 'contact_widget' );
 	}
 	
 	public function register_post_types() {

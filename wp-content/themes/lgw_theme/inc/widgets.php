@@ -34,9 +34,9 @@ class contact_widget extends WP_Widget {
 
 		public function __construct() {
 			parent::__construct(
-				'tim_featured_allotments', // Base ID
-				__('Featured Allotments', 'text_domain'), // Name
-				array( 'description' => __( 'Shows the Featured Allotments Section', 'text_domain' ), ) // Args
+				'contact_widget', // Base ID
+				__('Contact Widget', 'text_domain'), // Name
+				array( 'description' => __( 'Shows the contact details', 'text_domain' ), ) // Args
 			);
 		}
 	
