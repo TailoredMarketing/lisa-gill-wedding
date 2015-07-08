@@ -10,7 +10,7 @@ Template Name: Contact Page
 			while( have_posts() ) : 
 				the_post();
 		?>
-        	<div class="col-md-24"><?php the_title(); ?></div>
+        	<div class="col-md-24"><h1><?php the_title(); ?></h1></div>
         	<div class="col-md-16 ">
             	
 						<?php the_content(); ?>
