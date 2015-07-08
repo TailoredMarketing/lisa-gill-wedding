@@ -19,8 +19,8 @@ Template Name: About Page
         	<div class="col-md-6">
             	<?php the_post_thumbnail( 'full', array( 'class' => 'img-responsive about_portrait' ) ); ?>
             </div>
-            <div class="col-md-6 col-md-offset-1">
-            
+            <div class="col-md-7 col-md-offset-1">
+            	<?php dynamic_sidebar( 'contact_sidebar' ); ?>
             </div>
         </div>
         <?php endwhile; ?>
