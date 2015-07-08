@@ -74,6 +74,15 @@ class tailored_theme_class {
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',
 		) );
+		
+		register_sidebar( array(
+			'name' => __( 'About Sidebar', 'seowned' ),
+			'id' => 'about_sidebar',
+			'before_widget' => '<div class="panel panel-default"><div class="panel-body">',
+			'after_widget' => "</div></div>",
+			'before_title' => '<h3>',
+			'after_title' => '</h3>',
+		) );
         
 	}
     
