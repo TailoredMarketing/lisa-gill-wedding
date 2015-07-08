@@ -6,14 +6,19 @@ Template Name: Contact Page
 <?php get_header(); ?>
 	<div id="content" class="container">
     	<div class="row">
+        <?php 
+			while( have_posts() ) : 
+				the_post();
+		?>
+        	<div class="col-md-24"><?php the_title(); ?></div>
         	<div class="col-md-16 ">
-            	<?php 
-					while( have_posts() ) : 
-						the_post();
-						the_content(); 
-					endwhile;
-				?>
+            	
+						<?php the_content(); ?>
+					
             </div>
+        <?php
+			endwhile;
+		?>
         	<div class="col-md-7 col-md-offset-1 ">
             	<?php dynamic_sidebar( 'contact_sidebar' ); ?>
             </div>
