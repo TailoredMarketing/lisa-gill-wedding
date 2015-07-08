@@ -54,7 +54,7 @@ class contact_widget extends WP_Widget {
 	
 		public function form( $instance ) {
 			$instance = wp_parse_args( (array) $instance, array( 'phone' => '(01494) 680811' ) );
-            $title = $instance['phone'];
+            $phone = $instance['phone'];
 ?>
             <p><label for="<?php echo $this->get_field_id('phone'); ?>">Phone Number: <input class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" type="text" value="<?php echo esc_attr($phone); ?>" /></label></p>
         <?php
