@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Contact Page
+*/
+?>
 <?php get_header(); ?>
 	<div id="content" class="container">
     	<div class="row">
