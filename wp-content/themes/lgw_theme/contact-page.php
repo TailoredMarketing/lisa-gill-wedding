@@ -6,7 +6,7 @@ Template Name: Contact Page
 <?php get_header(); ?>
 	<div id="content" class="container">
     	<div class="row">
-        	<div class="col-md-18 ">
+        	<div class="col-md-16 ">
             	<?php 
 					while( have_posts() ) : 
 						the_post();
@@ -14,7 +14,7 @@ Template Name: Contact Page
 					endwhile;
 				?>
             </div>
-        	<div class="col-md-6 ">
+        	<div class="col-md-7 col-md-offset-1 ">
             
             </div>
         </div>
