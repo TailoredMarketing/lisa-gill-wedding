@@ -306,3 +306,10 @@ body {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
+.social-icons a {
+	padding: 0 15px;
+	color: 	#bfb8a9;
+}
+.social-icons a:hover {
+	text-decoration: none;
+}
