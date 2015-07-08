@@ -7,7 +7,7 @@
 			?>
         	<div class="col-md-24 single_header">
             	<?php 
-					if ( has_post_thumbnail() ) {
+					if ( get_the_post_thumbnail() != '' ) {
 						echo '<div class="has_thumb">';
 							the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) ); 
 							echo '<h1>'.get_the_title().'</h1>';
