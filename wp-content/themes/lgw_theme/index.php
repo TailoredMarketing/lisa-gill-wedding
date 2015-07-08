@@ -10,12 +10,20 @@
             <?php } ?>
             <?php if( $i<2 ) { ?>
                 <div class="col-md-12 blog-feat">
-                	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) );  ?></a>
+                	<?php if ( get_the_post_thumbnail() != '' ) { ?>
+                    	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-home-lg', array( 'class' => 'img-responsive' ) );  ?></a>
+                    <?php } else { ?>
+                    	<img src="http://placehold.it/455x228?text=No+Featured+Image" class="img-responsive" alt="...">
+                    <?php } ?>
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 </div>
             <?php } else {?>
             	<div class="col-md-6 blog-small">
-                	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-home', array( 'class' => 'img-responsive' ) );  ?></a>
+                	<?php if ( get_the_post_thumbnail() != '' ) { ?><strong></strong>
+                		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-home', array( 'class' => 'img-responsive' ) );  ?></a>
+                    <?php } else { ?>
+                    	<img src="http://placehold.it/300x200?text=No+Featured+Image" class="img-responsive" alt="...">
+                    <?php } ?>
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 </div>
             <?php } ?>
