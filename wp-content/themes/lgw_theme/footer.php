@@ -14,28 +14,14 @@
             <div class="col-md-6 col-sm-12">
             	<h3>Archives</h3>
                 	<ul class="list-unstyled">
-                    	<li><a href="#">June 2015</a></li>
-                        <li><a href="#">May 2015</a></li>
-                        <li><a href="#">April 2015</a></li>
-                        <li><a href="#">March 2015</a></li>
-                        <li><a href="#">February 2015</a></li>
-                        <li><a href="#">Jan 2015</a></li>
-                        <li><a href="#">2014</a></li>
-                        <li><a href="#">2013</a></li>
-                        <li><a href="#">All Blogs</a></li>
+                    	<?php wp_get_archives( array( 'type' => 'monthly', 'limit' => 8 ) ); ?>
+                        <li><a href="/blog/">All Blogs</a></li>
                     </ul>
             </div>
             <div class="col-md-6 col-sm-12">
             	<h3>Categories</h3>
                 <ul class="list-unstyled">
-                    <li><a href="#">Baby</a></li>
-                    <li><a href="#">Bump</a></li>
-                    <li><a href="#">Family</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Training</a></li>
-                    <li><a href="#">Uncategorized</a></li>
-                    <li><a href="#">Wedding</a></li>
+                    <?php wp_list_categories( array( 'number' => 9, 'title_li' => __( '' ), 'show_option_all'    => 'All Categories', )  ); ?>
                 </ul>
             </div>
             <div class="col-md-6 col-sm-12">
