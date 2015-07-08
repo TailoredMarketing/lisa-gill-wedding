@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php wp_title(); ?></title>
+    <title><?php wp_title(''); ?></title>
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,400italic,600italic' rel='stylesheet' type='text/css'>
     <?php wp_head(); ?>
     <!--[if lt IE 9]>

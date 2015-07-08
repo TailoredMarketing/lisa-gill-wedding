@@ -284,6 +284,17 @@ body {
 .single-post article header {
 	padding-bottom: 15px;	
 }
+.blog-feat h2, .blog-small h2 {
+	font-size: 26px;
+	color: #000;
+	text-transform: uppercase;
+}
+.blog-small h2 {
+	font-size: 20px;
+}
+.blog-feat h2 a, .blog-small h2 a {
+	color: #464646;
+}
 #footer a {
 	color: #716f6f;
 	font-style: italic;

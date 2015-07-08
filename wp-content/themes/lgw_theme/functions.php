@@ -38,7 +38,7 @@ class tailored_theme_class {
         add_image_size( 'custom-large', 451, 347, true ); 
         add_image_size( 'custom-medium', 451, 347, true ); 
         add_image_size( 'custom-small', 65, 65, true ); 
-        add_image_size( 'allotment-home', 300, 200, true ); 
+        add_image_size( 'blog-home', 300, 200, true ); 
     }
     
 	public function register_shortcodes() {
