@@ -1,10 +1,6 @@
 <?php
 	
-	function custom_excerpt_length( $length ) {
-		return 15;
-	}
 	
-	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	
 	add_filter( 'wp_pagenavi', 'ik_pagination', 10, 2 );
 	
@@ -56,3 +52,13 @@
 	  }
 	  return $first_img;
 	}
+	
+	function custom_excerpt_length( $length ) {
+		return 50;
+	}
+	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+	
+	function new_excerpt_more( $more ) {
+		return '';
+	}
+	add_filter('excerpt_more', 'new_excerpt_more');

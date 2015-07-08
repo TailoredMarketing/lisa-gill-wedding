@@ -284,6 +284,9 @@ body {
 .single-post article header {
 	padding-bottom: 15px;	
 }
+.blog-feat h2 {
+	min-height: 90px;
+}
 .blog-feat h2, .blog-small h2 {
 	font-size: 26px;
 	color: #000;
@@ -292,8 +295,11 @@ body {
 .blog-small h2 {
 	font-size: 20px;
 }
-.blog-feat h2 a, .blog-small h2 a {
+.blog-feat h2 a, .blog-small h2 a, .blog-feat p a {
 	color: #464646;
+}
+.blog-feat p a:hover {
+	text-decoration: none;
 }
 #footer a {
 	color: #716f6f;
