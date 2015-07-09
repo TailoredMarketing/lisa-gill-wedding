@@ -225,6 +225,7 @@ class tailored_theme_class {
 			'supports'           => array( 'title', 'editor', 'thumbnail' )
 		);
 	
+		register_post_type( 'gallaries', $galleryargs );
 		register_post_type( 'galleries', $galleryargs );
 		register_post_type( 'packages', $packageargs );
 		register_post_type( 'faqs', $faqargs );
