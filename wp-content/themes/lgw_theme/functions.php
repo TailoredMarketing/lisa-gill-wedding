@@ -94,20 +94,20 @@ class tailored_theme_class {
 	
 	public function register_post_types() {
 		$gallerylabels = array(
-			'name'               => _x( 'Gallaries', 'post type general name', 'your-plugin-textdomain' ),
+			'name'               => _x( 'Galleries', 'post type general name', 'your-plugin-textdomain' ),
 			'singular_name'      => _x( 'Gallery', 'post type singular name', 'your-plugin-textdomain' ),
-			'menu_name'          => _x( 'Gallaries', 'admin menu', 'your-plugin-textdomain' ),
-			'name_admin_bar'     => _x( 'Gallaries', 'add new on admin bar', 'your-plugin-textdomain' ),
+			'menu_name'          => _x( 'Galleries', 'admin menu', 'your-plugin-textdomain' ),
+			'name_admin_bar'     => _x( 'Galleries', 'add new on admin bar', 'your-plugin-textdomain' ),
 			'add_new'            => _x( 'Add New', 'book', 'your-plugin-textdomain' ),
 			'add_new_item'       => __( 'Add New Gallery', 'your-plugin-textdomain' ),
 			'new_item'           => __( 'New Gallery', 'your-plugin-textdomain' ),
 			'edit_item'          => __( 'Edit Gallery', 'your-plugin-textdomain' ),
 			'view_item'          => __( 'View Gallery', 'your-plugin-textdomain' ),
 			'all_items'          => __( 'All Gallaries', 'your-plugin-textdomain' ),
-			'search_items'       => __( 'Search Gallaries', 'your-plugin-textdomain' ),
-			'parent_item_colon'  => __( 'Parent Gallaries:', 'your-plugin-textdomain' ),
-			'not_found'          => __( 'No gallaries found.', 'your-plugin-textdomain' ),
-			'not_found_in_trash' => __( 'No gallaries found in Trash.', 'your-plugin-textdomain' )
+			'search_items'       => __( 'Search Galleries', 'your-plugin-textdomain' ),
+			'parent_item_colon'  => __( 'Parent Galleries:', 'your-plugin-textdomain' ),
+			'not_found'          => __( 'No Galleries found.', 'your-plugin-textdomain' ),
+			'not_found_in_trash' => __( 'No Galleries found in Trash.', 'your-plugin-textdomain' )
 		);
 	
 		$galleryargs = array(
@@ -225,7 +225,7 @@ class tailored_theme_class {
 			'supports'           => array( 'title', 'editor', 'thumbnail' )
 		);
 	
-		register_post_type( 'gallaries', $galleryargs );
+		register_post_type( 'galleries', $galleryargs );
 		register_post_type( 'packages', $packageargs );
 		register_post_type( 'faqs', $faqargs );
 		register_post_type( 'testimonials', $testargs );
