@@ -12,15 +12,7 @@
                 </div>
             </div>
         	<div class="col-md-7 inner-box">
-            	<form class="match home-contact">
-                	<h2>Contact Us</h2>
-                    <p>Use the simple form below to send me your details and I will be in touch to discuss <strong>your</strong> needs</p>
-                    <input type="text" required placeholder="name" class="form-control">
-                    <input type="email" required placeholder="email" class="form-control">
-                    <input type="tel" required placeholder="phone" class="form-control">
-                    <textarea class="form-control" placeholder="message" rows="3"></textarea>
-                    <button type="submit" class="btn btn-primary btn-block">Send Your Enquiry</button>
-                </form>
+            	<?php echo do_shortcode( '[contact-form-7 id="23068" title="Home Contact"]' ); ?>
             </div>
         </div>
     </div>
@@ -37,19 +29,12 @@
 		?>
     	<div class="gallery-head"><h2>Featured</h2></div>
     	<div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          </ol>
            <div class="carousel-inner" role="listbox">
         	<?php
 				$i = 0;
 				foreach( $posts as $slide ) {
 				$post = $slide;
 				setup_postdata( $post );
-				$thumb_id = get_post_thumbnail_id( $blog->ID ); 
-				$image = wp_get_attachment_url( $thumb_id );
 			?>
              
                 <div class="item <?php echo ( $i == 0 ? 'active' : '' ); $i ++; ?>">
@@ -75,21 +60,38 @@
     <div class="container padding">
     	<div class="row three-boxes">
         	<div class="col-md-8 box">
-            	<div class="match">
+            	<div class="match testi-home">
                 	<h3>Testimonials</h3>
-                    <p>Lisa you and your team are amazing. You felt like part of the wedding party right from the start. Gorgeous pictures but without the formalities! Would recommend you to anyone in a heartbeat and we both want to thank you so very much…</p>
+                	<?php 
+						global $post;
+						$args = array(
+							'post_type' 		=> 'testimonials',
+							'posts_per_page' 	=> 1,
+							'orderby'			=> 'rand',
+						);
+						$posts = get_posts( $args );
+						foreach( $posts as $testi ) {
+							$post = $testi;
+							setup_postdata( $post );
+					?>
+                    <?php the_excerpt(); ?>
+                    <strong><a href="/testimonials/"><?php the_title(); ?></a></strong>
+                    <?php 
+						}
+						wp_reset_postdata();
+					?>
                 </div>
             </div>
             <div class="col-md-8 box">
-            	<div class="match">
+            	<div class="match botlink">
                 	<h3>Request a Brochure</h3>
-                    <a href="#" class="btn btn-default">Request a Brochure</a>
+                    <a href="/contact/" class="btn btn-default">Request a Brochure</a>
                 </div>
             </div>
             <div class="col-md-8 box">
-            	<div class="match">
+            	<div class="match botlink">
                 	<h3>Wedding Photography Packages</h3>
-                    <a href="#" class="btn btn-default">Check Our Prices</a>
+                    <a href="/packages/" class="btn btn-default">Check Our Prices</a>
                 </div>
             </div>
         </div>

@@ -1,4 +1,7 @@
 /* CSS Document */
+a {
+	  color: #bfb8a9;
+}
 body {
 	background-image: url(img/bg.png);
 	background-repeat: repeat;
@@ -75,7 +78,7 @@ body {
 .three-boxes .match {
 	position: relative;
 }
-.three-boxes .match a {
+.three-boxes .match.botlink a {
 	position: absolute;
 	bottom: 15px;
 	left: 15px;	
