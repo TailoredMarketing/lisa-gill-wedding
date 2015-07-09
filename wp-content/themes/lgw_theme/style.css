@@ -57,6 +57,7 @@ body {
 	padding: 1.3em;
 }
 .inner-box .wpcf7 {
+	border: none;
 	padding: 0;
 }
 .inner-box form {
