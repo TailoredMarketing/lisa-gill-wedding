@@ -11,7 +11,7 @@
 						?>
                 </div>
             </div>
-        	<div class="col-md-7 inner-box">
+        	<div class="col-md-7 inner-box home-contact">
             	<?php echo do_shortcode( '[contact-form-7 id="23068" title="Home Contact"]' ); ?>
             </div>
         </div>
