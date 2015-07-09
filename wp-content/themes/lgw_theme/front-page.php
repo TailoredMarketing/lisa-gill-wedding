@@ -25,6 +25,16 @@
         </div>
     </div>
     <div class="featured gallery container">
+    	<?php 
+			global $post;
+			$args = array(
+				'post_type' 		=> 'home-slide',
+				'posts_per_page' 	=> -1,
+				'orderby'			=> 'menuorder',
+				'order'				=> 'asc'
+			);
+			$posts = get_posts( $args );
+		?>
     	<div class="gallery-head"><h2>Featured</h2></div>
     	<div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
           <ol class="carousel-indicators">
@@ -32,28 +42,25 @@
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
           </ol>
-        
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="http://placehold.it/940x600?text=Slide+1" alt="...">
-              <div class="carousel-caption">
-                ...
-              </div>
-            </div>
-            <div class="item">
-              <img src="http://placehold.it/940x600?text=Slide+2" alt="...">
-              <div class="carousel-caption">
-                ...
-              </div>
-            </div>
-            <div class="item">
-              <img src="http://placehold.it/940x600?text=Slide+3" alt="...">
-              <div class="carousel-caption">
-                ...
-              </div>
-            </div>
-          </div>
-        
+           <div class="carousel-inner" role="listbox">
+        	<?php
+				$i = 0;
+				foreach( $posts as $slide ) {
+				$post = $slide;
+				setup_postdata( $post );
+				$thumb_id = get_post_thumbnail_id( $blog->ID ); 
+				$image = wp_get_attachment_url( $thumb_id );
+			?>
+             
+                <div class="item <?php echo ( $i == 0 ? 'active' : '' ); $i ++; ?>">
+                	<?php the_post_thumbnail('full', array( 'class' => 'img-responsive' ) ); ?>
+                </div>
+             
+        	<?php 
+				}
+				wp_reset_postdata();
+			?>
+             </div>
           <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -63,6 +70,7 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+        
     </div>
     <div class="container padding">
     	<div class="row three-boxes">
@@ -88,29 +96,66 @@
     </div>
     <div class="container padding">
     	<div class="row">
+        		<?php 
+					global $post;
+					$args = array(
+						'post_type' 		=> 'post',
+						'posts_per_page' 	=> 1,
+						'orderby'			=> 'date',
+						'order'				=> 'desc'
+					);
+					$posts = get_posts( $args );
+					foreach( $posts as $blog ) {
+						$post = $blog;
+						setup_postdata( $post );
+						$thumb_id = get_post_thumbnail_id( $blog->ID ); 
+						$image = wp_get_attachment_url( $thumb_id );
+				?>
         	<div class="col-md-14">
-            	<div class="match" style="background-image: url(http://placehold.it/600x350?text=Blog+Featured+Image); background-size: cover;">
+            	<div class="match" style="background-image: url(<?php echo $image; ?>); background-size: cover;">
                 </div>
             </div>
             <div class="col-md-10 home-blog match">
             	<time>February 26, 2015</time>
-                <h3>Have a sneaky look into our new wedding photography album...</h3>
+                <h3><?php the_title(); ?></h3>
                 <div class="excerpt">
-                    If any of our lovely readers are #justengaged, and valentines brides to be, you might be thinking about your…</div>					
-                	<a href="http://www.lisagillphotography.com/sneaky-look-new-wedding-photography-album/" class="btn btn-default">OPEN POST</a>
+                	<?php the_excerpt(); ?>
+                </div>					
+                	<a href="<?php the_permalink(); ?>" class="btn btn-default">OPEN POST</a>
             </div>
+            <?php 
+				} 
+				wp_reset_postdata();
+			?>
         </div>
     </div>
     <div class="container padding">
-    	<div class="row">
+    	<div class="row home-gallery">
+        	<?php 
+				global $post;
+				$args = array(
+					'post_type' 		=> 'galleries',
+					'posts_per_page' 	=> 2,
+					'orderby'			=> 'date',
+					'order'				=> 'desc'
+				);
+				$posts = get_posts( $args );
+				foreach( $posts as $gallery ) {
+					$post = $gallery;
+					setup_postdata( $post );
+			?>
         	<div class="col-md-8">
-            	<img src="http://placehold.it/300x200?text=Gallery+1" class="img-responsive" alt="...">
+            	<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'blog-home', array( 'class' => 'img-responsive' ) ); ?>
+                    <?php the_title(); ?>
+                </a>
             </div>
-            <div class="col-md-8">
-            	<img src="http://placehold.it/300x200?text=Gallery+2" class="img-responsive" alt="...">
-            </div>
-            <div class="col-md-8">
-            	<img src="http://placehold.it/300x200/ffffff/bfb8a9/?text=Recent+Galleries" class="img-responsive" alt="...">
+            <?php
+				}
+				wp_reset_postdata();
+			?>
+            <div class="col-md-8 allgall-link">
+            	<a href="/galleries/">Recent Galleries</a>
             </div>
         </div>
     </div>

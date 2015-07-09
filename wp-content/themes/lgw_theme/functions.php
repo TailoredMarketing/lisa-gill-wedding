@@ -10,7 +10,9 @@ class tailored_theme_class {
         add_action( 'init', array( $this, 'register_sidebars' ) );
 		add_action( 'init', array( $this, 'register_shortcodes' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
-        add_action( 'init', array( $this, 'register_menus' ) );		
+        add_action( 'init', array( $this, 'register_menus' ) );
+		add_action('admin_menu', array( $this, 'admin_menus' ) );
+				
 		if ( ! isset( $content_width ) ) $content_width = 1070;
         add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 		
@@ -35,7 +37,7 @@ class tailored_theme_class {
 	}
     
     public function register_image_sizes() {
-        add_image_size( 'custom-large', 451, 347, true ); 
+        add_image_size( 'home-blog', 600, 350, true ); 
         add_image_size( 'custom-medium', 451, 347, true ); 
         add_image_size( 'custom-small', 65, 65, true ); 
         add_image_size( 'blog-home', 300, 200, true ); 
@@ -57,6 +59,10 @@ class tailored_theme_class {
 		
     }
     
+	public function admin_menus() {
+		add_theme_page('Homepage Editor', 'Homepage', 'edit_theme_options', 'homepage-editor', array( $this, 'homepage_editor' ) );
+	}
+	
     public function register_sidebars() {
 		register_sidebar( array(
 			'name' => __( 'Main Sidebar', 'seowned' ),
@@ -186,7 +192,7 @@ class tailored_theme_class {
 			'rewrite'            => false,
 			'capability_type'    => 'post',
 			'has_archive'        => false,
-			'hierarchical'       => false,
+			'hierarchical'       => true,
 			'exclude_from_search'=> false,
 			'menu_icon'			 => 'dashicons-lightbulb',
 			'supports'           => array( 'title', 'editor' )
@@ -219,16 +225,44 @@ class tailored_theme_class {
 			'rewrite'            => true,
 			'capability_type'    => 'post',
 			'has_archive'        => true,
-			'hierarchical'       => false,
+			'hierarchical'       => true,
 			'exclude_from_search'=> false,
 			'menu_icon'			 => 'dashicons-megaphone',
 			'supports'           => array( 'title', 'editor', 'thumbnail' )
+		);
+		
+		$homeslidelabels = array(
+			'name'               => _x( 'Homepage Slider', 'post type general name', 'your-plugin-textdomain' ),
+		);
+	
+		$homeslideargs = array(
+			'labels'             => $homeslidelabels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => false,
+			'capability_type'    => 'post',
+			'has_archive'        => false,
+			'hierarchical'       => true,
+			'exclude_from_search'=> false,
+			'menu_icon'			 => 'dashicons-slides',
+			'supports'           => array( 'title', 'thumbnail' )
 		);
 	
 		register_post_type( 'galleries', $galleryargs );
 		register_post_type( 'packages', $packageargs );
 		register_post_type( 'faqs', $faqargs );
 		register_post_type( 'testimonials', $testargs );
+		register_post_type( 'home-slide', $homeslideargs );
+	}
+	
+	public function homepage_editor() { ?>
+		<div class="wrap">
+        	<h2>Homepage Editor</h2>
+        </div>
+    <?php	
 	}
 	
 	public function packages_meta_box() {

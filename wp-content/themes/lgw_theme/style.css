@@ -312,6 +312,26 @@ body {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
+.home-gallery a {
+	color: #bfb8a9;
+}
+.allgall-link a {
+	color: #bfb8a9;
+	font-size: 19px;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	padding: 88px 0;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+}
+.allgall-link a:hover {
+	text-decoration: none;
+}
+.carousel-inner .item img {
+	width: 100%;
+	height: auto;
+}
 .social-icons a {
 	padding: 0 15px;
 	color: 	#bfb8a9;
