@@ -14,13 +14,19 @@ class tailored_theme_class {
 		add_action( 'add_meta_boxes', array( $this, 'only_home_settings' ) ); 		
 		if ( ! isset( $content_width ) ) $content_width = 1070;
         add_action( 'widgets_init', array( $this, 'register_widgets' ) );
+		add_filter( 'pre_get_posts', array( $this, 'be_archive_query' ) );
+
 		
 		add_action( 'add_meta_boxes_packages', array( $this, 'packages_meta_box') );
 		add_action( 'save_post', array( $this, 'save_packages' ) );
 		add_action( 'save_post', array( $this, 'save_homepage' ) );
         add_theme_support( 'post-thumbnails' );
     }
-    
+	function be_archive_query( $query ) {
+		if( $query->is_main_query() && $query->is_post_type_archive('galleries') ) {
+			$query->set( 'posts_per_page', 5 );
+		}
+	}
     public function enqueue_scripts(){
 		
 		wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', '1.0');
