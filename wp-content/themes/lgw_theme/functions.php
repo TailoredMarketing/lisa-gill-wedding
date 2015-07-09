@@ -11,14 +11,13 @@ class tailored_theme_class {
 		add_action( 'init', array( $this, 'register_shortcodes' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_menus' ) );
-		add_action('admin_menu', array( $this, 'admin_menus' ) );
-				
+		add_action( 'add_meta_boxes', array( $this, 'only_home_settings' ) ); 		
 		if ( ! isset( $content_width ) ) $content_width = 1070;
         add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 		
 		add_action( 'add_meta_boxes_packages', array( $this, 'packages_meta_box') );
 		add_action( 'save_post', array( $this, 'save_packages' ) );
-		
+		add_action( 'save_post', array( $this, 'save_homepage' ) );
         add_theme_support( 'post-thumbnails' );
     }
     
@@ -59,10 +58,6 @@ class tailored_theme_class {
 		
     }
     
-	public function admin_menus() {
-		add_theme_page('Homepage Editor', 'Homepage', 'edit_theme_options', 'homepage-editor', array( $this, 'homepage_editor' ) );
-	}
-	
     public function register_sidebars() {
 		register_sidebar( array(
 			'name' => __( 'Main Sidebar', 'seowned' ),
@@ -258,11 +253,24 @@ class tailored_theme_class {
 		register_post_type( 'home-slide', $homeslideargs );
 	}
 	
-	public function homepage_editor() { ?>
-		<div class="wrap">
-        	<h2>Homepage Editor</h2>
-        </div>
-    <?php	
+	function only_home_settings() {
+	   global $post;
+	   $frontpage_id = get_option('page_on_front');
+	   if($post->ID == $frontpage_id):
+		  add_meta_box('home-text', 'Homepage bottom text', array( $this, 'only_home_form' ), 'page', 'advanced', 'core');
+	   endif;
+	}
+	
+	public function only_home_form() {
+		global $post;
+		$content = get_post_meta( $post->ID, 'home_bottom_text', true );
+		$settings = array( 'media_buttons' => false );
+		wp_editor( $content, 'home_bottom_text', $settings );	
+	}
+	
+	public function save_homepage( $post_id ) {
+		$content = sanitize_text_field( $_POST['home_bottom_text'] );
+		update_post_meta( $post_id, 'home_bottom_text', $content );
 	}
 	
 	public function packages_meta_box() {

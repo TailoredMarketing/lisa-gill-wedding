@@ -162,8 +162,9 @@
         </div>
     </div>
     <div class="container padding">
-   	  <p>We believe that preparation is key and therefore visit the wedding venue before the day to ensure we capture the best possible images. Having done lots of reportage wedding photography in Buckinghamshire, we're already familiar with many venues in the area. We don't just work in Buckinghamshire though, we're happy to travel all over the UK and abroad for our wedding clients.</p>
-    	<p>As a rule, we'll be in attendance from the bridal preparation through to the first dance (around 8 hours) although we're happy to stay longer, just call us to discuss your specific requirements.</p>
-    	<p>If you'd like to chat to some of our past wedding clients, please do give the studio a call on 01494 680811 or complete the contact form and we'll be happy to pass on contact details.</p>
+   	  <?php
+	  	$content = get_post_meta( $post->ID, 'home_bottom_text', true );
+		echo wpautop( $content );
+	  ?>
     </div>
 <?php get_footer(); ?>   
