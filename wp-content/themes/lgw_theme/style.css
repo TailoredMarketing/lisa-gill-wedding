@@ -81,6 +81,7 @@ body {
 }
 .three-boxes .match {
 	position: relative;
+	min-height: 180px;
 }
 .three-boxes .match.botlink a {
 	position: absolute;
