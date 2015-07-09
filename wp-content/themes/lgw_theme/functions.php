@@ -269,7 +269,7 @@ class tailored_theme_class {
 	}
 	
 	public function save_homepage( $post_id ) {
-		$content = sanitize_text_field( $_POST['home_bottom_text'] );
+		$content = $_POST['home_bottom_text'];
 		update_post_meta( $post_id, 'home_bottom_text', $content );
 	}
 	
