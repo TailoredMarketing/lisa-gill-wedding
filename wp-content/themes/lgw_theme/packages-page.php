@@ -36,6 +36,7 @@ Template Name: Packages Page
                 <?php 
 						$i++;
 						if( $i == 3 || $i == count( $posts_array ) ) {
+							$i = 0;
 							echo '</div>';
 						}
 					}
