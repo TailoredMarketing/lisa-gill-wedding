@@ -24,7 +24,7 @@ class tailored_theme_class {
     }
 	function be_archive_query( $query ) {
 		if( $query->is_main_query() && $query->is_post_type_archive('galleries') ) {
-			$query->set( 'posts_per_page', 5 );
+			$query->set( 'posts_per_page', 4 );
 		}
 	}
     public function enqueue_scripts(){
