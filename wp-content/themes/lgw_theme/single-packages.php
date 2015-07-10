@@ -15,7 +15,7 @@
 					
 				?>
                 <div id="package_footer">
-                	<a href="<?php echo ( isset( $meta['package_paypal'] ) ? $meta['package_paypal'][0] : '' ); ?>" class="btn btn-primary pull-left">Buy</a> <span class="package_price pull-right">&pound;<?php echo ( isset( $meta['package_price'] ) ? number_format( $meta['package_price'][0], 0 ) : '' ); ?> </span>
+                	<!--<a href="<?php echo ( isset( $meta['package_paypal'] ) ? $meta['package_paypal'][0] : '' ); ?>" class="btn btn-primary pull-left">Buy</a>--> <span class="package_price pull-right">&pound;<?php echo ( isset( $meta['package_price'] ) ? number_format( $meta['package_price'][0], 0 ) : '' ); ?> </span>
                 </div>
             </div>
         	<div class="col-md-14 col-md-offset-1">
