@@ -16,12 +16,13 @@ class tailored_theme_class {
         add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 		add_filter( 'pre_get_posts', array( $this, 'be_archive_query' ) );
 
-		
 		add_action( 'add_meta_boxes_packages', array( $this, 'packages_meta_box') );
 		add_action( 'save_post', array( $this, 'save_packages' ) );
 		add_action( 'save_post', array( $this, 'save_homepage' ) );
         add_theme_support( 'post-thumbnails' );
     }
+	
+	
 	function be_archive_query( $query ) {
 		if( $query->is_main_query() && $query->is_post_type_archive('galleries') ) {
 			$query->set( 'posts_per_page', 4 );
